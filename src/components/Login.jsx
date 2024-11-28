@@ -21,7 +21,7 @@ function LoginComponent() {
     try {
       const session = await authobj.login(data);
       if (session) {
-        const userdata = await session.getcurrentuser();
+        const userdata = await authobj.getcurrentuser();
         if (userdata) {
           dispatch(authlogin(userdata));
         }

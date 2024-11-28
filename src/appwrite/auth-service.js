@@ -61,7 +61,8 @@ export class authclass {
         try {
             return await this.account.get();
         } catch (error) {
-            console.log("Appwrite serive :: getCurrentUser :: error", error);
+            // console.log("Appwrite serive :: getCurrentUser :: error", error);
+            return null;
         }
 
         return null;

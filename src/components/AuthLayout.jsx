@@ -12,8 +12,7 @@ function AuthLayout({ children, authentictions = true }) {
     if (authentictions && userstatus !== authentictions) {
       navigate("/login");
     } else if(!authentictions && userstatus !== authentictions) {
-      console.log(userstatus!==authentictions,!authentictions);
-      // navigate("/");
+      navigate("/");
     }
     setLoading(false);
   }, [userstatus, navigate, authentictions]);

@@ -13,7 +13,6 @@ export class PostServicecls {
 
     async createpost({ title, slug, content, featuredimage, status, userid }) {
         try {
-            console.log({ title, slug, content, featuredimage, status, userid })
             const post = await this.db.createDocument(
             String(import.meta.env.VITE_APPWRITE_DATABASE_ID),
             String(import.meta.env.VITE_APPWRITE_COLLECTION_ID), slug, {
@@ -23,7 +22,6 @@ export class PostServicecls {
                 status,
                 userid,
             })
-            console.log(post)
             return post;
         } catch (error) {
             console.log(error);
@@ -92,7 +90,6 @@ export class PostServicecls {
     // file upload function
 
     async uploadfile(file) {
-        console.log(file);
         try {
             const fileData = await this.storage.createFile(
                 String(import.meta.env.VITE_APPWRITE_BUCKET_ID),
@@ -109,7 +106,6 @@ export class PostServicecls {
     // file delete function
 
     async deletefile({fileId}) {
-      console.log(fileId);
         try {
             await this.storage.deleteFile(String(import.meta.env.VITE_APPWRITE_BUCKET_ID), fileId);
             return true;

@@ -123,7 +123,6 @@ export class PostServicecls {
             String(import.meta.env.VITE_APPWRITE_BUCKET_ID), 
             fileId,
         )
-        console.log(fileurl);
         return fileurl;
     }
 }
